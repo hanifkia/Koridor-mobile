@@ -1,0 +1,51 @@
+# docker compose -f docker-compose.develop.yml -f docker-compose.override.yml --profile dev up -d migration-shell pgadmin
+
+services:
+  migration-shell:
+    build:
+      context: .
+      dockerfile: migrations/Dockerfile.migrations
+    profiles: ["dev"]
+    container_name: ecolos-migration-shell
+    entrypoint: ["tail", "-f", "/dev/null"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/ecolos_db
+      PYTHONPATH: /app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - app-network
+    volumes:
+      - .:/app
+      - migration_cache:/app/.alembic_cache
+    working_dir: /app/migrations
+
+
+  # ------------------------------------------------------------------ pgAdmin
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ecolos-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - app-network
+    command: bash -c "exec python /pgadmin4/pgAdmin4.py > /dev/null 2>&1"
+
+  postgres:
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

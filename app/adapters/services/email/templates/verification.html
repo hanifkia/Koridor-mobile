@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify Your Email</title>
+<style>
+    body { margin:0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f6f9fc; color:#333; }
+    .container { max-width:600px; margin:30px auto; background-color:#fff; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1); overflow:hidden; }
+    .header { background-color:#0a84ff; padding:30px; text-align:center; color:white; }
+    .header h1 { margin:0; font-size:28px; }
+    .content { padding:30px; }
+    .content h2 { color:#0a84ff; margin-top:0; }
+    .token-box { background-color:#f0f4ff; border-left:4px solid #0a84ff; padding:20px; border-radius:6px; margin:25px 0; text-align:center; }
+    .token-box p { margin:0 0 10px 0; color:#666; font-size:14px; }
+    .token-value { font-size:32px; font-weight:bold; letter-spacing:4px; color:#0a84ff; font-family:'Courier New', monospace; }
+    .btn { display:inline-block; background-color:#0a84ff; color:white; padding:12px 30px; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:20px; }
+    .btn:hover { background-color:#0066cc; }
+    .timer { color:#ff6b6b; font-weight:bold; font-size:14px; margin-top:15px; }
+    .footer { font-size:12px; color:#888; text-align:center; padding:20px; border-top:1px solid #eee; }
+    .info-text { font-size:13px; color:#666; line-height:1.6; margin:15px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>✓ Verify Your Email</h1>
+    </div>
+    <div class="content">
+        <h2>Welcome, {{ name }}!</h2>
+        <p class="info-text">Thank you for signing up with Ecolosplus. To complete your registration, please verify your email address using the code below:</p>
+        
+        <div class="token-box">
+            <p>Your Verification Code</p>
+            <div class="token-value">{{ token }}</div>
+            <p class="timer">⏱️ Code expires in 2 hours</p>
+        </div>
+
+        <p class="info-text"><strong>How to use:</strong></p>
+        <ul style="font-size:13px; color:#666; padding-left:20px;">
+            <li>Copy the verification code above</li>
+            <li>Return to the registration page</li>
+            <li>Paste the code in the verification field</li>
+            <li>Click "Verify" to complete your registration</li>
+        </ul>
+
+        <p class="info-text" style="margin-top:25px;">
+            <strong>Didn't create this account?</strong><br>
+            If you didn't sign up for Ecolosplus, please disregard this email. Your account won't be activated until you verify this code.
+        </p>
+    </div>
+    <div class="footer">
+        &copy; 2026 Ecolosplus. All rights reserved.<br>
+        <a href="https://trendplus.se/stand-alone-driver-app/" style="color:#0a84ff; text-decoration:none;">Visit our website</a>
+        <div style="display:none; font-size:1px; line-height:1px;">&#8203;</div>
+    </div>
+</div>
+</body>
+</html>

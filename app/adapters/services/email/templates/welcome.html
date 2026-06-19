@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Setup</title>
+<style>
+    body { margin:0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f6f9fc; color:#333; }
+    .container { max-width:600px; margin:30px auto; background-color:#fff; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1); overflow:hidden; }
+    .header { background-color:#0a84ff; padding:30px; text-align:center; color:white; }
+    .header h1 { margin:0; font-size:28px; }
+    .content { padding:30px; }
+    .content h2 { color:#0a84ff; margin-top:0; }
+    .setup-box { background-color:#f0f4ff; border-left:4px solid #0a84ff; padding:20px; border-radius:6px; margin:25px 0; }
+    .setup-box h3 { margin:0 0 15px 0; color:#0a84ff; font-size:16px; }
+    .setup-list { list-style:none; padding-left:0; margin:15px 0; }
+    .setup-list li { padding:12px 0; padding-left:30px; position:relative; color:#666; font-size:13px; line-height:1.6; }
+    .setup-list li:before { content:"→"; position:absolute; left:0; color:#0a84ff; font-weight:bold; font-size:16px; }
+    .step-number { display:inline-block; background-color:#0a84ff; color:white; width:24px; height:24px; border-radius:50%; text-align:center; line-height:24px; font-weight:bold; font-size:12px; margin-right:10px; }
+    .btn { display:inline-block; background-color:#0a84ff; color:white; padding:12px 30px; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:20px; }
+    .btn:hover { background-color:#0066cc; }
+    .info-text { font-size:13px; color:#666; line-height:1.6; margin:15px 0; }
+    .cta-section { text-align:center; margin:30px 0; }
+    .benefit-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0; }
+    .benefit-card { background-color:#f9f9f9; padding:15px; border-radius:6px; border:1px solid #eee; text-align:center; font-size:12px; }
+    .benefit-card strong { color:#0a84ff; display:block; margin-bottom:5px; }
+    .footer { font-size:12px; color:#888; text-align:center; padding:20px; border-top:1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⚙️ Complete Your Setup</h1>
+    </div>
+    <div class="content">
+        <h2>Welcome {{ name }}!</h2>
+        <p class="info-text">Your account is ready! Now let's get you set up with couriers and terminals so you can start making deliveries with TrendPlus.</p>
+        
+        <div class="setup-box">
+            <h3>Next Steps:</h3>
+            <ol style="margin:0; padding-left:20px; color:#666; font-size:13px;">
+                <li style="margin-bottom:12px;"><strong>Add Couriers</strong> - Register your delivery drivers and assign them to your operation</li>
+                <li style="margin-bottom:12px;"><strong>Configure Terminals</strong> - Set up pickup and delivery locations (hubs, warehouses, distribution points)</li>
+                <li><strong>Start Routing</strong> - Create your first route and begin optimizing deliveries</li>
+            </ol>
+        </div>
+
+        <p class="info-text"><strong>What You'll Be Able To Do:</strong></p>
+        <ul style="font-size:13px; color:#666; padding-left:20px; line-height:1.8;">
+            <li>Assign routes to couriers in real-time</li>
+            <li>Optimize multi-stop delivery sequences</li>
+            <li>Track deliveries live on the map</li>
+            <li>Manage proof of delivery and documentation</li>
+            <li>Scale to 300+ deliveries per month</li>
+        </ul>
+
+        <p class="info-text" style="font-size:12px; text-align:center; color:#999; margin-top:25px;">
+            <strong>Need help?</strong> Our team is ready to assist. <a href="{{ support_url }}" style="color:#0a84ff;">Contact support</a> or <a href="{{ demo_url }}" style="color:#0a84ff;">book a demo</a>.
+        </p>
+    </div>
+    <div class="footer">
+        &copy; 2026 TrendPlus AB. All rights reserved.<br>
+        <a href="https://trendplus.se/stand-alone-driver-app/" style="color:#0a84ff;">Visit our website</a>
+        <div style="display:none; font-size:1px; line-height:1px;">&#8203;</div>
+    </div>
+</div>
+</body>
+</html>

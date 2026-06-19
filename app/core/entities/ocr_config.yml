@@ -1,0 +1,74 @@
+fields:
+  recipient_first_name:
+    type: str
+    required: false
+    description: "Recipient first name. if recipient is organization name such as company name, office name or etc, consider full organization name as first name"
+
+  recipient_last_name:
+    type: str
+    required: false
+    description: "Recipient last name"
+    
+  street:
+    type: str
+    required: false
+    description: "street name and/or street number of the recipient"
+
+  postal_code:
+    type: str
+    required: false
+    description: "The postal code of the recipient"
+
+  city:
+    type: str
+    required: false
+    description: "The city which recipient live"
+
+  country:
+    type: str
+    required: false
+    description: "The country which recipient live"
+
+  recipient_phone:
+    type: str
+    required: false
+    default: null
+    description: "Recipient phone number"
+
+  recipient_email:
+    type: str
+    required: false
+    default: null
+    description: "Recipient email"
+    
+  sender_full_name:
+    type: str
+    required: false
+    default: null
+    description: "Full name of the sender"
+    
+  sender_address:
+    type: str
+    required: false
+    default: null
+    description: "Full address of the sender containing country, city, street, alley, building, unit number and all the available details"
+    
+  weight_occupation:
+    type: float
+    required: false
+    description: "Parcel weight in gram, if it provided in KG you need to convert it to gram by multiplying it by 1000"
+    
+  parcel_piece:
+    type: str
+    required: false
+    description: "Parcel piece available in the data. for example 1/1, 1/2, 3/3, etc."
+    
+  parcel_contents:
+    type: str
+    required: false
+    description: "Parcel contents info that shows what type of parcel is in the box for example electronic, display, kitchen stuffs etc."
+
+  barcode:
+    type: str
+    required: false
+    description: "the barcode which starting with WAYBILL"

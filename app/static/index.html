@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Driver App</title>
+
+  <!-- Your separate CSS -->
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="badge">Route Optimization API</div>
+        <h1>Welcome</h1>
+        <p>
+          Fast, clean, driver-focused UI — designed to feel like a stand-alone driver app.
+        </p>
+
+        <div class="actions">
+          <!-- Button to open Swagger -->
+          <a class="btn btn-primary" id="swaggerBtn" href="/docs" target="_blank" rel="noopener">
+            Open Swagger
+          </a>
+
+          <button class="btn btn-ghost" type="button" onclick="showHint()">
+            Get Started
+          </button>
+        </div>
+
+        <div class="stats">
+          <div class="card">
+            <div class="card-title">API Version</div>
+            <div class="card-value">{{ APP_VERSION }}</div>
+          </div>
+          <div class="card">
+            <div class="card-title">Auth Endpoint</div>
+            <div class="card-value small">{{ login_endpoint }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring ring2"></div>
+        <div class="dots"></div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="grid">
+        <div class="feature">
+          <h2>Route Planning</h2>
+          <p>Prepare routes and optimize travel times with a clean request/response flow.</p>
+        </div>
+
+        <div class="feature">
+          <h2>Driver-Friendly UX</h2>
+          <p>Large buttons, readable typography, and an interface that works well on mobile.</p>
+        </div>
+
+        <div class="feature">
+          <h2>FastAPI Backend</h2>
+          <p>Swagger UI included for easy testing and documentation for your endpoints.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Route Optimization</span>
+      <span class="footer-sep">•</span>
+      <span>Docs: <a href="/docs" target="_blank">/docs</a></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function showHint() {
+      alert("Tip: Use the Open Swagger button to test your API endpoints.");
+    }
+  </script>
+</body>
+</html>

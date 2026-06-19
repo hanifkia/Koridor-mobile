@@ -1,0 +1,24 @@
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install dependencies from root
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy entire project
+COPY . .
+
+# Verify critical files exist (adjusting for actual structure)
+RUN test -f /app/migrations/alembic.ini || (echo "❌ /app/alembic.ini not found" && ls -la /app && exit 1) && \
+    test -d /app/migrations/alembic/versions || (echo "❌ /app/alembic/versions not found" && exit 1) && \
+    echo "✅ All required files present"
+
+ENV PYTHONPATH=/app
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
