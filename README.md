@@ -1,6 +1,6 @@
 # Koridor Mobile WebApp
 
-> A production-ready mobile web application powered by FastAPI, PostgreSQL, and Redis — containerized with Docker Compose.
+> Koridor is the mobile web application behind TrendPlus's Stand-Alone Driver App — a delivery management platform built for couriers handling multi-stop routes across food delivery, last-mile, and courier services. It gives drivers everything they need in one place: assigned routes, detailed order information, on-demand order creation, optimized route generation, and guided delivery execution. The backend is built with FastAPI and PostgreSQL for fast async performance, Redis for real-time state and caching, and the entire stack runs containerized for consistent deployment across environments.
 
 ---
 
